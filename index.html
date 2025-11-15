@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBLIKASI DESA KARANGGETAS</title>
+    
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/logo%20kab.indramayu.png">
+    
+    <!-- Memuat Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Google Fonts (Inter) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- REVISI 2: Menambahkan weight 800 (extrabold) untuk font --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Mengatur font default ke Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* CSS kustom untuk animasi fade-in yang halus */
+        .content-section {
+            display: none; /* Sembunyikan semua section secara default */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .content-section.active {
+            display: block; /* Tampilkan hanya section yang aktif */
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Style untuk image carousel */
+        .image-carousel {
+            display: flex;
+            overflow-x: hidden; /* Sembunyikan scrollbar manual */
+            scroll-snap-type: x mandatory; /* Mengunci scroll ke setiap slide */
+            -webkit-overflow-scrolling: touch; /* Meningkatkan pengalaman scrolling di iOS */
+            scrollbar-width: none; /* Sembunyikan scrollbar untuk Firefox */
+            -ms-overflow-style: none; /* Sembunyikan scrollbar untuk IE/Edge */
+        }
+
+        /* Sembunyikan scrollbar untuk Webkit (Chrome, Safari) */
+        .image-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%; /* Setiap item mengambil 100% lebar carousel */
+            scroll-snap-align: start; /* Mengunci item ke awal saat di-scroll */
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigasi Carousel (Opsional, untuk visualisasi) */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            padding: 8px 0;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #d1d5db; /* gray-300 */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: #16A34A; /* green-600 */
+        }
+
+        /* Menyesuaikan tinggi iframe agar lebih baik di ponsel */
+        @media (max-width: 768px) {
+            iframe {
+                height: 400px; /* Lebih pendek di perangkat kecil */
+            }
+        }
+    </style>
+</head>
+<body class="bg-lime-50 text-gray-800">
+
+    <!-- Kontainer Utama --><div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <!-- Header --><header class="text-center mb-8 md:mb-12">
+            <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/logo%20kab.indramayu.png"
+                 onerror="this.src='https://placehold.co/100x100/A3A3A3/FFFFFF?text=Logo+Gagal+Muat'"
+                 alt="Logo Desa Karanggetas"
+                 class="mx-auto h-20 w-20 md:h-24 md:w-24 object-contain mb-4">
+            
+            <!-- REVISI 2: Font lebih besar (text-4xl/5xl) dan tebal (font-extrabold) --><h1 class="text-4xl md:text-5xl font-extrabold text-green-900">
+                PUBLIKASI DESA KARANGGETAS
+            </h1>
+            <p class="text-lg text-green-700 mt-2">
+                Perencanaan, Pelaksanaan dan Realisasi
+            </p>
+        </header>
+
+        <!-- Navigasi Tombol --><nav class="mb-8">
+            <!-- Grid untuk tombol navigasi --><div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <button class="nav-button" data-target="rpjmdes">RPJMDes</button>
+                <button class="nav-button" data-target="rkpdes">RKPDes</button>
+                <button class="nav-button" data-target="apbdes_awal">APBDes Awal</button>
+                <button class="nav-button" data-target="apbdes_perubahan">APBDes Perubahan</button>
+                <button class="nav-button" data-target="apbdes_realisasi">APBDes Realisasi</button>
+                <button class="nav-button" data-target="pembangunan">Daftar Pembangunan</button>
+            </div>
+        </nav>
+
+        <!-- Kontainer Konten Utama --><main id="content-container" class="bg-white p-6 md:p-8 rounded-xl shadow-lg min-h-[400px]">
+            
+            <!-- Konten Default (Carousel Otomatis) --><section id="content-default" class="content-section active">
+                <!-- REVISI 3: Penambahan 'Desa Karanggetas' --><h2 class="text-2xl font-semibold text-green-800 mb-4 text-center">Selamat Datang di Portal Publikasi Desa Karanggetas</h2>
+                
+                <div class="relative rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white h-80 md:h-[500px]">
+                    <div class="image-carousel h-full" id="carousel-default">
+                        <!-- Foto-foto untuk carousel otomatis di halaman depan --><div class="carousel-item">
+                            <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/paud_melati_1.jpg"
+                                 onerror="this.src='https://placehold.co/800x480/A3A3A3/FFFFFF?text=Slide+1+Gagal+Muat'"
+                                 alt="Pembangunan Gedung PAUD Melati">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/posyandu_sawo_1.jpg"
+                                 onerror="this.src='https://placehold.co/800x480/A3A3A3/FFFFFF?text=Slide+2+Gagal+Muat'"
+                                 alt="Pembangunan Posyandu Sawo">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tarinah_1.jpg"
+                                 onerror="this.src='https://placehold.co/800x480/A3A3A3/FFFFFF?text=Slide+3+Gagal+Muat'"
+                                 alt="Peningkatan Jalan Lingkungan Bp. Tarinah">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_kuburan_gede_1.jpg"
+                                 onerror="this.src='https://placehold.co/800x480/A3A3A3/FFFFFF?text=Slide+4+Gagal+Muat'"
+                                 alt="Peningkatan Jalan Lingkungan Kuburan Gede">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tani_1.jpg"
+                                 onerror="this.src='https://placehold.co/800x480/A3A3A3/FFFFFF?text=Slide+5+Gagal+Muat'"
+                                 alt="Perkerasan Jalan Usaha Tani">
+                        </div>
+                    </div>
+                    <div class="carousel-nav" data-carousel-id="carousel-default"></div>
+                </div>
+            </section>
+
+            <!-- Konten RPJMDes --><section id="content-rpjmdes" class="content-section">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4">RPJMDes (Rencana Pembangunan Jangka Menengah Desa)</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Rancangan RPJMDes (2022-2029) disajikan dalam format PDF. Silakan gulir untuk melihat isi dokumen.
+                </p>
+                <iframe src="https://docs.google.com/gview?url=https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/RPJMDes_Karanggetas.pdf&embedded=true" class="w-full h-[600px] md:h-[800px] rounded-lg border border-gray-300" title="Dokumen RPJMDes"></iframe>
+                <p class="mt-4 text-sm text-gray-600">
+                    Jika PDF tidak tampil, Anda bisa 
+                    <a href="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/RPJMDes_Karanggetas.pdf" class="text-blue-600 underline" download="RPJMDes_Karanggetas.pdf">
+                        mengunduhnya langsung di sini.
+                    </a>
+                </p>
+            </section>
+
+            <!-- Konten RKPDes --><section id="content-rkpdes" class="content-section">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4">RKPDes (Rencana Kerja Pemerintah Desa)</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Dokumen RKPDes Tahun <span id="current-year-rkpdes"></span> disajikan dalam format PDF.
+                </p>
+                <iframe src="https://docs.google.com/gview?url=https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/RKPDes_Karanggetas.pdf&embedded=true" class="w-full h-[600px] md:h-[800px] rounded-lg border border-gray-300" title="Dokumen RKPDes"></iframe>
+                <p class="mt-4 text-sm text-gray-600">
+                    Jika PDF tidak tampil, Anda bisa 
+                    <a href="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/RKPDes_Karanggetas.pdf" class="text-blue-600 underline" download="RKPDes_Karanggetas.pdf">
+                        mengunduhnya langsung di sini.
+                    </a>
+                </p>
+            </section>
+
+            <!-- Konten APBDes Awal --><section id="content-apbdes_awal" class="content-section">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4">APBDes (Anggaran Pendapatan dan Belanja Desa) - Awal</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Dokumen APBDes Awal Tahun <span id="current-year-apbdes"></span> disajikan dalam format PDF.
+                </p>
+                <iframe src="https://docs.google.com/gview?url=https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/APBDesAwal_Karanggetas.pdf&embedded=true" class="w-full h-[600px] md:h-[800px] rounded-lg border border-gray-300" title="Dokumen APBDes Awal"></iframe>
+                <p class="mt-4 text-sm text-gray-600">
+                    Jika PDF tidak tampil, Anda bisa 
+                    <a href="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/APBDesAwal_Karanggetas.pdf" class="text-blue-600 underline" download="APBDes_Awal_Karanggetas.pdf">
+                        mengunduhnya langsung di sini.
+                    </a>
+                </p>
+            </section>
+
+            <!-- Konten APBDes Perubahan --><section id="content-apbdes_perubahan" class="content-section">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4">APBDes (Anggaran Pendapatan dan Belanja Desa) - Perubahan</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Dokumen APBDes Perubahan disajikan dalam format PDF. Jika dokumen belum tersedia, akan ditampilkan halaman kosong atau error.
+                </p>
+                <iframe src="https://docs.google.com/gview?url=https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/APBDesPerubahan_Karanggetas.pdf&embedded=true" class="w-full h-[600px] md:h-[800px] rounded-lg border border-gray-300" title="Dokumen APBDes Perubahan"></iframe>
+                <p class="mt-4 text-sm text-gray-600">
+                    Jika PDF tidak tampil, Anda bisa 
+                    <a href="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/APBDesPerubahan_Karanggetas.pdf" class="text-blue-600 underline" download="APBDes_Perubahan_Karanggetas.pdf">
+                        mengunduhnya langsung di sini.
+                    </a>
+                </p>
+            </section>
+
+            <!-- Konten APBDes Realisasi --><section id="content-apbdes_realisasi" class="content-section">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4">Laporan Realisasi APBDes</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Laporan Realisasi APBDes Desa karanggetas Tahun Anggaran 2024.
+                </p>
+                <iframe src="https://docs.google.com/gview?url=https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/RealisasiAPBDes_Karanggetas.pdf&embedded=true" class="w-full h-[600px] md:h-[800px] rounded-lg border border-gray-300" title="Dokumen Realisasi APBDes"></iframe>
+                <p class="mt-4 text-sm text-gray-600">
+                    Jika PDF tidak tampil, Anda bisa 
+                    <a href="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/RealisasiAPBDes_Karanggetas.pdf" class="text-blue-600 underline" download="Realisasi_APBDes_Karanggetas.pdf">
+                        mengunduhnya langsung di sini.
+                    </a>
+                </p>
+            </section>
+
+            <!-- Konten Daftar Pembangunan --><section id="content-pembangunan" class="content-section">
+                <h2 class="text-2xl font-semibold text-green-800 mb-6">Daftar Pembangunan Desa</h2>
+                
+                <!-- Grid untuk daftar pembangunan --><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Item Pembangunan 1: Pembangunan Gedung PAUD Melati --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-1">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/paud_melati_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Pembangunan Gedung PAUD Melati 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/paud_melati_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Pembangunan Gedung PAUD Melati 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/paud_melati_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Pembangunan Gedung PAUD Melati 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-1"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Pembangunan Gedung PAUD Melati</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Bojong Melati RT. 005</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 405.000.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> Dana Desa</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item Pembangunan 2: Pembangunan Posyandu Sawo --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-2">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/posyandu_sawo_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Pembangunan Posyandu Sawo 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/posyandu_sawo_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Pembangunan Posyandu Sawo 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/posyandu_sawo_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Pembangunan Posyandu Sawo 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-2"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Pembangunan Posyandu Sawo</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Bojong Melati RT. 005</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 141.540.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> Dana Desa</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item Pembangunan 3: Peningkatan/Rehab Jl. Lingkungan (Bp. Tarinah) --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-3">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tarinah_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tarinah_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tarinah_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-3"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Peningkatan/Rehab Jl. Lingkungan</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Bojong Melati RT. 003 Gang Bp. Tarinah</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 31.180.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> Dana Desa</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item Pembangunan 4: Peningkatan/Rehab Jl. Lingkungan (Kuburan Gede) --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-4">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_kuburan_gede_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_kuburan_gede_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_kuburan_gede_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-4"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Peningkatan/Rehab Jl. Lingkungan</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Grojogan (Gang Kuburan Gede)</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 35.330.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> Dana Desa</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item Pembangunan 5: Perkerasan Jalan Usaha Tani --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-5">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tani_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Perkerasan Jalan Usaha Tani 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tani_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Perkerasan Jalan Usaha Tani 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_tani_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Perkerasan Jalan Usaha Tani 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-5"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Perkerasan Jalan Usaha Tani</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Bojong Lor RT. 006 RW. 002 (Sirtu), DD Silpa</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 5.700.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> SilPa Dana Desa 2024</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item Pembangunan 6: Rutilahu (Blok Krupak) --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-6">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/rutilahu_krupak_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Rutilahu 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/rutilahu_krupak_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Rutilahu 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/rutilahu_krupak_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Rutilahu 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-6"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Rutilahu</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Krupak</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 10.000.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> SilPa Dana Desa 2024</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item Pembangunan 9: Peningkatan/Rehab Jl. Lingkungan (Bp. Rustamin) --><div class="rounded-lg shadow-lg overflow-hidden border border-gray-100 bg-white">
+                        <div class="relative h-48">
+                            <div class="image-carousel h-full" id="carousel-9">
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_rustamin_1.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_rustamin_2.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/karanggetaskeren-pisan/publikasi/jalan_rustamin_3.jpg"
+                                         onerror="this.src='https://placehold.co/600x400/A3A3A3/FFFFFF?text=Gagal+Muat'"
+                                         alt="Peningkatan/Rehab Jl. Lingkungan 3">
+                                </div>
+                            </div>
+                            <div class="carousel-nav" data-carousel-id="carousel-9"></div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-green-800">Peningkatan/Rehab Jl. Lingkungan</h3>
+                            <p class="text-sm text-gray-700 mt-2 space-y-1">
+                                <span class="block"><span class="font-medium">Lokasi:</span> Blok Grojogan (Gang Bp. Rustamin)</span>
+                                <span class="block"><span class="font-medium">Volume:</span> -</span>
+                                <span class="block"><span class="font-medium">Anggaran:</span> Rp 98.000.000</span>
+                                <span class="block"><span class="font-medium">Sumber Dana:</span> Banprov</span>
+                                <span class="block"><span class="font-medium">Tahun:</span> 2025</span>
+                                <span class="block"><span class="font-medium">Status:</span> <span class="font-medium text-green-600">Selesai</span></span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer --><footer class="text-center mt-8 md:mt-12 text-sm text-green-700/80">
+            <!-- REVISI 1: Perubahan teks footer -->
+            &copy; <span id="current-year-footer"></span> Pemerintah Desa Karanggetas
+            <br>
+            Kecamatan Bangodua Kabupaten Indramayu - Jawa Barat
+        </footer>
+        
+    </div>
+
+    <!-- JavaScript --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.nav-button');
+            const sections = document.querySelectorAll('.content-section');
+            const defaultSection = document.getElementById('content-default');
+            
+            // Mengatur tahun saat ini di footer dan elemen lain
+            const currentYear = new Date().getFullYear();
+            document.getElementById('current-year-footer').textContent = currentYear;
+            
+            const yearElements = ['current-year-rkpdes', 'current-year-apbdes'];
+            yearElements.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.textContent = currentYear;
+                }
+            });
+
+            // Kelas CSS untuk tombol navigasi
+            const baseButtonClasses = [
+                'p-4', 'rounded-lg', 'shadow', 'font-semibold', 
+                'text-white', 'transition-all', 'duration-300', 
+                'text-center', 'cursor-pointer', 'bg-green-700', 'hover:bg-green-800', 'hover:shadow-md'
+            ];
+            
+            const activeButtonClasses = [
+                'bg-green-900', 'ring-2', 'ring-amber-400', 'shadow-xl', 'scale-105'
+            ];
+
+            // Inisialisasi tombol navigasi
+            buttons.forEach(button => {
+                button.classList.add(...baseButtonClasses);
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    const targetSection = document.getElementById(`content-${targetId}`);
+
+                    // Reset semua tombol ke style dasar
+                    buttons.forEach(btn => {
+                        btn.classList.remove(...activeButtonClasses);
+                        if (!btn.classList.contains('bg-green-700')) {
+                             btn.classList.add('bg-green-700', 'hover:bg-green-800');
+                        }
+                    });
+
+                    // Terapkan style aktif ke tombol yang diklik
+                    button.classList.add(...activeButtonClasses);
+                    button.classList.remove('bg-green-700', 'hover:bg-green-800');
+
+                    // Sembunyikan semua section
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    // Tampilkan section yang dituju
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    } else {
+                        defaultSection.classList.add('active');
+                    }
+                });
+            });
+
+            // Inisialisasi dan Otomatisasi Carousel
+            const initCarousel = (carousel) => {
+                const carouselId = carousel.id;
+                const dotsContainer = document.querySelector(`.carousel-nav[data-carousel-id="${carouselId}"]`);
+                const items = carousel.querySelectorAll('.carousel-item');
+                let currentItemIndex = 0;
+                let autoScrollInterval;
+
+                // Buat dot navigasi
+                if (dotsContainer) {
+                    items.forEach((_, index) => {
+                        const dot = document.createElement('div');
+                        dot.classList.add('carousel-dot');
+                        if (index === 0) dot.classList.add('active');
+                        dot.addEventListener('click', () => {
+                            scrollToItem(index);
+                            resetAutoScroll();
+                        });
+                        dotsContainer.appendChild(dot);
+                    });
+                }
+
+                // Fungsi untuk menggulir ke item tertentu
+                const scrollToItem = (index) => {
+                    carousel.scrollLeft = carousel.clientWidth * index;
+                    updateDots(index);
+                    currentItemIndex = index;
+                };
+
+                // Fungsi untuk mengupdate dot aktif
+                const updateDots = (activeIndex) => {
+                    if (dotsContainer) {
+                        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                        dots.forEach((dot, index) => {
+                            if (index === activeIndex) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
+                    }
+                };
+
+                // Fungsi auto-scroll
+                const startAutoScroll = () => {
+                    if (items.length > 1) { // Hanya auto-scroll jika ada lebih dari 1 gambar
+                        autoScrollInterval = setInterval(() => {
+                            let nextIndex = (currentItemIndex + 1) % items.length;
+                            scrollToItem(nextIndex);
+                        }, 5000); // Gulir setiap 5 detik
+                    }
+                };
+
+                const resetAutoScroll = () => {
+                    clearInterval(autoScrollInterval);
+                    startAutoScroll();
+                };
+
+                // Event listener untuk saat carousel di-scroll manual
+                carousel.addEventListener('scroll', () => {
+                    const scrollLeft = carousel.scrollLeft;
+                    const itemWidth = carousel.clientWidth;
+                    const newIndex = Math.round(scrollLeft / itemWidth);
+                    if (newIndex !== currentItemIndex) {
+                        currentItemIndex = newIndex;
+                        updateDots(currentItemIndex);
+                        resetAutoScroll(); // Reset timer auto-scroll jika user scroll manual
+                    }
+                });
+
+                startAutoScroll(); // Mulai auto-scroll saat inisialisasi
+            };
+
+            // Inisialisasi semua carousel yang ada
+            const carousels = document.querySelectorAll('.image-carousel');
+            carousels.forEach(carousel => {
+                initCarousel(carousel);
+            });
+        });
+    </script>
+
+</body>
+</html>
